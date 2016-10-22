@@ -11,5 +11,18 @@
             "levitation",
             "featherfoot"
         ]
+    },
+	{
+        "name" : "Summoning control",
+        "file" : "summoningcontrol",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "summoningcontrol",
+        "unicode" : "☕",
+        "description" : "Allows removing the buff Summoning (Sorcerer C1 skill) by using the skill again while the buff is active.",
+        "tags" : [
+            "summoning",
+            "sorcerer"
+        ]
     }
 ]
