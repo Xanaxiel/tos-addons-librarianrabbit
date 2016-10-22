@@ -3,7 +3,7 @@
         "name" : "Levitation control",
         "file" : "levitationcontrol",
         "extension" : "ipf",
-        "fileVersion" : "v1.0.0",
+        "fileVersion" : "v1.0.1",
         "releaseTag" : "levitationcontrol",
         "unicode" : "☕",
         "description" : "Allows removing the buff Levitation (Featherfoot C2 skill) by using the skill again while the buff is active.",

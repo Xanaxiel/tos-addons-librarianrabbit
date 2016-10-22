@@ -1,6 +1,14 @@
+local LEVITATIONCONTROL_LOADED = false;
+
 function LEVITATIONCONTROL_ON_INIT(addon, frame)
+	if LEVITATIONCONTROL_LOADED then
+		return;
+	end
+
 	_G["_LEVITATION_ICON_USE"] = _G["ICON_USE"];
 	_G["ICON_USE"] = LEVITATION_USE;
+	
+	LEVITATIONCONTROL_LOADED = true;
 end
 
 function LEVITATION_OFF()
