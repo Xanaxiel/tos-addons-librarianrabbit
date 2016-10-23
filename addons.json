@@ -1,6 +1,6 @@
 [
     {
-        "name" : "Levitation control",
+        "name" : "Levitation Control",
         "file" : "levitationcontrol",
         "extension" : "ipf",
         "fileVersion" : "v1.0.2",
@@ -10,6 +10,19 @@
         "tags" : [
             "levitation",
             "featherfoot"
+        ]
+    },
+	{
+        "name" : "Remove Summon",
+        "file" : "removesummon",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "removesummon",
+        "unicode" : "☕",
+        "description" : "Allows removing the buff Summoning (Sorcerer C1 skill) by using the commands: /removesummon or /rs.",
+        "tags" : [
+            "summoning",
+            "sorcerer"
         ]
     }
 ]
