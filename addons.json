@@ -24,5 +24,31 @@
             "summoning",
             "sorcerer"
         ]
+    },
+	{
+        "name" : "Transpose Control",
+        "file" : "transposecontrol",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "transposecontrol",
+        "unicode" : "☕",
+        "description" : "Allows removing the buff Transpose (Thaumaturge C1 skill) by using the skill again while the buff is active.",
+        "tags" : [
+            "transpose",
+            "thaumaturge"
+        ]
+    },
+	{
+        "name" : "Party Invite",
+        "file" : "partyinvite",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "partyinvite",
+        "unicode" : "☕",
+        "description" : "Allows inviting party members with the command /party. Example: /party Teamname",
+        "tags" : [
+            "party",
+            "invite"
+        ]
     }
 ]
