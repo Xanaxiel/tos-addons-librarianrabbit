@@ -37,18 +37,5 @@
             "transpose",
             "thaumaturge"
         ]
-    },
-	{
-        "name" : "Party Invite",
-        "file" : "partyinvite",
-        "extension" : "ipf",
-        "fileVersion" : "v1.0.1",
-        "releaseTag" : "partyinvite",
-        "unicode" : "☕",
-        "description" : "Allows inviting party members with the command /party. Example: /party Teamname",
-        "tags" : [
-            "party",
-            "invite"
-        ]
     }
 ]
