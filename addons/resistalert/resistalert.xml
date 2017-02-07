@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uiframe name="resistalert" x="0" y="0" width="42" height="42">
+    <frame fasthide="true" layout_gravity="left top"/>
+    <input moveable="false" hittestframe="false"/>
+    <layer layerlevel="105"/>
+	<skin frameskin="textballoon"/>
+    <draw drawtitlebar="false" drawnotitlebar="false"/>
+    <option closebutton="false" hideable="false"/>
+    <controls>
+		<picture name="iconImage" rect="0 0 42 42" margin="0 0 0 0" layout_gravity="left top" image="icon_item_upset" stretch="true"/>
+	</controls>
+</uiframe>
