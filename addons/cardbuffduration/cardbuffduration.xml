@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uiframe name="cardbuffduration" x="0" y="0" width="400" height="200" create="open">
+    <frame title="cardbuffduration" layout_gravity="center center" margin="0 0 200 0"/>
+    <input hittest="false"/>
+    <option closebutton="false" hideable="false"/>
+    <draw drawtitlebar="false"/>
+    <skin frameskin="none"/>
+    <layer layerlevel="97"/>
+    <controls>
+        <gauge name="gauge_4506" rect="0 0 140 19" margin="-70 -5 0 0" hittest="false" layout_gravity="center top" text1="{s16}Glass Mole{s20}{ol}%r" textalign1="center center" textoffset1="-5 -5" visible="false"/>
+        <gauge name="gauge_4508" rect="0 0 140 19" margin="70 -5 0 0" hittest="false" layout_gravity="center top" text1="{s16}Chapparition{s20}{ol}%r" textalign1="center center" textoffset1="-5 -5" visible="false"/>
+    </controls>
+</uiframe>

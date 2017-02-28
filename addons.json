@@ -50,5 +50,22 @@
             "resist",
             "debuffs"
         ]
+    },
+    {
+        "name" : "Card Buff Duration",
+        "file" : "cardbuffduration",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "cardbuffduration",
+        "unicode" : "☕",
+        "description" : "Addon based on MutekAttitute. Shows a gauge bar near the character to show Glass Mole and Chapparition monster cards effect duration.",
+        "tags" : [
+			"card",
+            "monster cards",
+            "buffs",
+            "duration",
+            "glass mole",
+            "chapparition"
+        ]
     }
 ]
