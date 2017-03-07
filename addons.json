@@ -6,7 +6,7 @@
         "fileVersion" : "v1.0.2",
         "releaseTag" : "levitationcontrol",
         "unicode" : "☕",
-        "description" : "Allows removing the buff Levitation (Featherfoot C2 skill) by using the skill again while the buff is active.",
+        "description" : "Deprecated. Use: Unbuff from jTOS Addon Manager.",
         "tags" : [
             "levitation",
             "featherfoot"
@@ -19,7 +19,7 @@
         "fileVersion" : "v1.0.0",
         "releaseTag" : "removesummon",
         "unicode" : "☕",
-        "description" : "Allows removing the buff Summoning (Sorcerer C1 skill) by using the commands: /removesummon or /rs.",
+        "description" : "Deprecated. Use: Unbuff from jTOS Addon Manager.",
         "tags" : [
             "summoning",
             "sorcerer"
@@ -32,7 +32,7 @@
         "fileVersion" : "v1.0.1",
         "releaseTag" : "transposecontrol",
         "unicode" : "☕",
-        "description" : "Allows removing the buff Transpose (Thaumaturge C1 skill) by using the skill again while the buff is active.",
+        "description" : "Deprecated. Use: Unbuff from jTOS Addon Manager.",
         "tags" : [
             "transpose",
             "thaumaturge"
@@ -58,7 +58,7 @@
         "fileVersion" : "v1.0.0",
         "releaseTag" : "cardbuffduration",
         "unicode" : "☕",
-        "description" : "Addon based on MutekAttitute. Shows a gauge bar near the character to show Glass Mole and Chapparition monster cards effect duration.",
+        "description" : "Deprecated. Use: Muteki2 from jTOS Addon Manager.",
         "tags" : [
 			"card",
             "monster cards",
