@@ -1,44 +1,5 @@
 [
     {
-        "name" : "Levitation Control",
-        "file" : "levitationcontrol",
-        "extension" : "ipf",
-        "fileVersion" : "v1.0.2",
-        "releaseTag" : "levitationcontrol",
-        "unicode" : "☕",
-        "description" : "Deprecated. Use: Unbuff from jTOS Addon Manager.",
-        "tags" : [
-            "levitation",
-            "featherfoot"
-        ]
-    },
-	{
-        "name" : "Remove Summon",
-        "file" : "removesummon",
-        "extension" : "ipf",
-        "fileVersion" : "v1.0.0",
-        "releaseTag" : "removesummon",
-        "unicode" : "☕",
-        "description" : "Deprecated. Use: Unbuff from jTOS Addon Manager.",
-        "tags" : [
-            "summoning",
-            "sorcerer"
-        ]
-    },
-	{
-        "name" : "Transpose Control",
-        "file" : "transposecontrol",
-        "extension" : "ipf",
-        "fileVersion" : "v1.0.1",
-        "releaseTag" : "transposecontrol",
-        "unicode" : "☕",
-        "description" : "Deprecated. Use: Unbuff from jTOS Addon Manager.",
-        "tags" : [
-            "transpose",
-            "thaumaturge"
-        ]
-    },
-	{
         "name" : "Resist Alert",
         "file" : "resistalert",
         "extension" : "ipf",
@@ -49,23 +10,6 @@
         "tags" : [
             "resist",
             "debuffs"
-        ]
-    },
-    {
-        "name" : "Card Buff Duration",
-        "file" : "cardbuffduration",
-        "extension" : "ipf",
-        "fileVersion" : "v1.0.0",
-        "releaseTag" : "cardbuffduration",
-        "unicode" : "☕",
-        "description" : "Deprecated. Use: Muteki2 from jTOS Addon Manager.",
-        "tags" : [
-			"card",
-            "monster cards",
-            "buffs",
-            "duration",
-            "glass mole",
-            "chapparition"
         ]
     }
 ]
