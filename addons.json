@@ -11,5 +11,17 @@
             "resist",
             "debuffs"
         ]
+    },
+    {
+        "name" : "Fishing Spy",
+        "file" : "fishingspy",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "fishingspy",
+        "unicode" : "☕",
+        "description" : "Shows the owner of other player's Tackle Box.",
+        "tags" : [
+            "fishing"
+        ]
     }
 ]
