@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uiframe name="bossmsglog" x="0" y="0" width="70" height="70">
+    <frame title="bossmsglog" snapclient="true" snapframe="true" layout_gravity="right top" margin="0 330 350 0"/>
+	<option visible="true" closebutton="false" useimageitem="true" piptype="right" autoopen="true" hideable="false"/>
+    <input hittestframe="true"/>
+    <layer layerlevel="31"/>
+    <draw blend="100" drawtitlebar="false" drawframe="false"/>
+    <controls>
+		<picture name="boss_battle" rect="0 0 65 65" margin="0 0 0 0" layout_gravity="center center" changecursor="false" stretch="true" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" hittest="true" image="NOTICE_Dm_levelup_skill"/>
+		<richtext name="boss_timer" rect="0 0 60 20" margin="40 0 12 12" layout_gravity="right bottom" hittest="false" caption=""/>
+	</controls>
+</uiframe>
