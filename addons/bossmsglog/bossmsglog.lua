@@ -93,7 +93,7 @@ function BOSSMSGLOG_NOTICE_ON_MSG(frame, msg, argStr, argNum)
 		end
 	elseif msg == "NOTICE_Dm_Global_Shout" then
 		if argStr:find("!@#$FieldBoss{Name}WillAppear") then
-			local bossName = BOSSMSGLOG_GET_FIELDBOSSWILLAPPEAR_NAME(str);
+			local bossName = BOSSMSGLOG_GET_FIELDBOSSWILLAPPEAR_NAME(argStr);
 			local bossGroup = BOSSMSGLOG_GET_DEMON_LORD_GROUP(bossName);
 
 			if bossGroup ~= nil then
