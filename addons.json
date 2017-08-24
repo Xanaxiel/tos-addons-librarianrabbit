@@ -23,5 +23,21 @@
         "tags" : [
             "fishing"
         ]
+    },
+    {
+        "name" : "Boss Notice",
+        "file" : "bossmsglog",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.1",
+        "releaseTag" : "bossmsglog",
+        "unicode" : "☕",
+        "description" : "Helps to keep track of Demon Lords spawn notice.",
+        "tags" : [
+            "demon",
+            "lords",
+            "boss",
+            "notice",
+            "timer"
+        ]
     }
 ]
