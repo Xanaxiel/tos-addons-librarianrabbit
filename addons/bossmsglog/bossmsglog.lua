@@ -36,6 +36,8 @@ function BOSSMSGLOG_ON_INIT(addon, frame)
 
 	BOSSMSGLOG_SETUP_UI(frame, 0);
 
+	BOSSMSGLOG_LOAD();
+
 	local acutil = require("acutil");
 	acutil.slashCommand("/bosslog", BOSSMSGLOG_TOGGLE_UI);
 	acutil.slashCommand("/bl", BOSSMSGLOG_TOGGLE_UI);
@@ -66,7 +68,21 @@ function BOSSMSGLOG_GET_FIELDBOSSWILLAPPEAR_NAME(str)
 end
 
 function BOSSMSGLOG_GET_TIME()
-	return GET_XM_HM_BY_SYSTIME();
+	local time = geTime.GetServerSystemTime();
+
+	local timeStr = "AM";
+	local hour = time.wHour;
+
+	if hour == 24 then
+		hour = 0;
+	elseif hour > 12 then
+		hour = hour - 12;
+		timeStr = "PM";
+	elseif hour == 12 then
+		timeStr = "PM";
+	end
+
+	return ScpArgMsg("{Month}{Day}","Month", time.wMonth, "Day", time.wDay) .. " - " .. string.format("%d:%02d %s", hour, time.wMinute, timeStr); -- GET_XM_HM_BY_SYSTIME();
 end
 
 function BOSSMSGLOG_GET_DEMON_LORD_GROUP(bossName)
@@ -79,6 +95,33 @@ function BOSSMSGLOG_GET_DEMON_LORD_GROUP(bossName)
 	end
 
 	return nil;
+end
+
+function BOSSMSGLOG_GET_SERVER_ID() -- marketnames.lua, thanks Excrulon
+	local f = io.open('../release/user.xml', "rb");
+	local content = f:read("*all");
+	f:close();
+	return content:match('RecentServer="(.-)"');
+end
+
+function BOSSMSGLOG_GET_FILENAME()
+  return "../addons/bossmsglog/" .. BOSSMSGLOG_GET_SERVER_ID() .. ".txt";
+end
+
+function BOSSMSGLOG_LOAD()
+	local bosses, err = acutil.loadJSON(BOSSMSGLOG_GET_FILENAME());
+
+	if err then
+		g.bosses = {};
+	else
+		g.bosses = bosses;
+	end
+
+	BOSSMSGLOG_SAVE();
+end
+
+function BOSSMSGLOG_SAVE()
+	acutil.saveJSON(BOSSMSGLOG_GET_FILENAME(), g.bosses);
 end
 
 function BOSSMSGLOG_NOTICE_ON_MSG(frame, msg, argStr, argNum)
@@ -103,6 +146,8 @@ function BOSSMSGLOG_NOTICE_ON_MSG(frame, msg, argStr, argNum)
 				g.bosses[bossGroup].time = time;
 				g.bosses[bossGroup].notice = imcTime.GetAppTime();
 				g.bosses[bossGroup].message = "[" .. time .. "] " .. argStr;
+
+				BOSSMSGLOG_SAVE();
 			end
 		end
 	end
