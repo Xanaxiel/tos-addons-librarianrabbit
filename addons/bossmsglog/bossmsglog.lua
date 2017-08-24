@@ -1,3 +1,5 @@
+local acutil = require("acutil");
+
 _G["LUNAR"] = _G["LUNAR"] or {};
 _G["LUNAR"]["BOSSMSGLOG"] = _G["LUNAR"]["BOSSMSGLOG"] or {};
 
@@ -38,7 +40,6 @@ function BOSSMSGLOG_ON_INIT(addon, frame)
 
 	BOSSMSGLOG_LOAD();
 
-	local acutil = require("acutil");
 	acutil.slashCommand("/bosslog", BOSSMSGLOG_TOGGLE_UI);
 	acutil.slashCommand("/bl", BOSSMSGLOG_TOGGLE_UI);
 end
