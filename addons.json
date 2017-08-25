@@ -28,7 +28,7 @@
         "name" : "Boss Notice",
         "file" : "bossmsglog",
         "extension" : "ipf",
-        "fileVersion" : "v1.0.3",
+        "fileVersion" : "v1.0.4",
         "releaseTag" : "bossmsglog",
         "unicode" : "☕",
         "description" : "Helps to keep track of Demon Lords spawn notice. Use /bosslog or /bl to show icon again.",
