@@ -11,7 +11,7 @@ g.interval = 30;
 
 g.spawn = 10 * 60;
 
-g.timer = imcTime.GetAppTime();
+g.timer = os.time();
 g.timeout = 15 * 60;
 
 g.bosses = {};
@@ -118,6 +118,10 @@ function BOSSMSGLOG_LOAD()
 		g.bosses = bosses;
 	end
 
+	for group, info in pairs(g.bosses) do
+		info.notice = nil;
+	end
+
 	BOSSMSGLOG_SAVE();
 end
 
@@ -145,7 +149,7 @@ function BOSSMSGLOG_NOTICE_ON_MSG(frame, msg, argStr, argNum)
 
 				g.bosses[bossGroup] = {};
 				g.bosses[bossGroup].time = time;
-				g.bosses[bossGroup].notice = imcTime.GetAppTime();
+				g.bosses[bossGroup].notice = os.time();
 				g.bosses[bossGroup].message = "[" .. time .. "] " .. argStr;
 
 				BOSSMSGLOG_SAVE();
@@ -155,11 +159,11 @@ function BOSSMSGLOG_NOTICE_ON_MSG(frame, msg, argStr, argNum)
 end
 
 function BOSSMSGLOG_UPDATE(frame, msg, argStr, argNum)
-	if (imcTime.GetAppTime() - g.timer) < g.interval then
+	if (os.time() - g.timer) < g.interval then
 		return;
 	end
 
-	g.timer = imcTime.GetAppTime();
+	g.timer = os.time();
 
 	local i_time = 0;
 
