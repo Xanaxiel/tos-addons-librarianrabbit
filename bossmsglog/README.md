@@ -1,4 +1,4 @@
 [WIP] Helps to keep track of Demon Lords spawn notice. Use /bosslog or /bl to show icon again.
 
-Screenshot:<br/>
+Screenshot:  
 ![BossNotice](https://raw.githubusercontent.com/librarianrabbit/tos-misc/master/images/BossNotice.png)
