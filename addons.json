@@ -39,5 +39,18 @@
             "notice",
             "timer"
         ]
+    },
+    {
+        "name" : "Easy Mount",
+        "file" : "easymount",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "easymount",
+        "unicode" : "☕",
+        "description" : "Teleports your companion to your position if it's too far when trying to mount.",
+        "tags" : [
+            "mount",
+            "companion"
+        ]
     }
 ]
