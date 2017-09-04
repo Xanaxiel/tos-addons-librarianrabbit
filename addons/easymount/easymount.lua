@@ -62,7 +62,7 @@ function EASYMOUNT_ON_RIDING_VEHICLE(onoff)
 
 	if myActor ~= nil then
 		-- Already riding something -> return
-		if myActor:GetUserIValue("CART_ATTACHED") == 1 or GetMyActor():GetVehicleState() == true then
+		if myActor:GetUserIValue("CART_ATTACHED") == 1 or GetMyActor():GetVehicleState() == true or control.GetNearSitableCart() ~= 0 then
 			return;
 		end
 
