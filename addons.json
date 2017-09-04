@@ -47,7 +47,7 @@
         "fileVersion" : "v1.0.0",
         "releaseTag" : "easymount",
         "unicode" : "☕",
-        "description" : "Teleports your companion to your position if it's too far when trying to mount.",
+        "description" : "Teleports your companion to your position if it's too far when trying to mount.\n\nCommands:\n/cptoggle: Toggles the state of your companion.",
         "tags" : [
             "mount",
             "companion"

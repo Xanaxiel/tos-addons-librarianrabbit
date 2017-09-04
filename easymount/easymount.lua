@@ -1,4 +1,5 @@
 -- dependencies
+local acutil = require("acutil");
 
 -- globals: general
 _G["LUNAR"] = _G["LUNAR"] or {};
@@ -37,6 +38,31 @@ function EASYMOUNT_SETUP_HOOKS()
 	for hook, fn in pairs(hook_table) do
 		if _G[hook] ~= fn then
 			_G[hook] = fn;
+		end
+	end
+end
+
+-- functions: commands
+function EASYMOUNT_SETUP_COMMANDS()
+	acutil.slashCommand("/cptoggle", EASYMOUNT_CMD_CPTOGGLE);
+end
+
+function EASYMOUNT_CMD_CPTOGGLE()
+	local frame = ui.GetFrame("pet_info");
+
+	if frame ~= nil then
+		local button = GET_CHILD_RECURSIVELY(frame, "activate");
+
+		if button ~= nil then
+			local message = "Your companion can now be activated.";
+
+			if control.GetMyCompanionActor() == nil then
+				message = "You can disable your companion now.";
+			end
+
+			ReserveScript(string.format("CHAT_SYSTEM(\"%s\")", message), 3);
+
+			TOGGLE_PET_ACTIVITY(button:GetParent(), button);
 		end
 	end
 end
