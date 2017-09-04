@@ -7,6 +7,7 @@ easymount
 --
 
 Teleports your companion to your position if it's too far when trying to mount.
+Adds /cptoggle to toggle the state of your companion.
 
 fishingspy
 --
