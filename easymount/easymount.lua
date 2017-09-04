@@ -60,7 +60,7 @@ function EASYMOUNT_CMD_CPTOGGLE()
 				message = "You can disable your companion now.";
 			end
 
-			ReserveScript(string.format("CHAT_SYSTEM(\"%s\")", message), 3);
+			ReserveScript(string.format("CHAT_SYSTEM(\"%s\")", message), 4);
 
 			TOGGLE_PET_ACTIVITY(button:GetParent(), button);
 		end
@@ -73,6 +73,7 @@ function EASYMOUNT_ON_INIT(addon, frame)
 	g.frame = frame;
 
 	EASYMOUNT_SETUP_HOOKS();
+	EASYMOUNT_SETUP_COMMANDS();
 
 	if g.loaded == false then
 		g.loaded = true;
