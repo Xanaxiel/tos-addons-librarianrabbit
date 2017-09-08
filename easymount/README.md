@@ -6,5 +6,8 @@ Available commands:
 /cptoggle: Toggles the state of your companion.
 
 Planned changes:  
-Toggle alerts on/off from /cptoggle command.  
+Change command to /pet.  
+Add command parameters 'on' and 'off' to change behavior instead of toggle.  
+Toggle alerts on/off from /pet command.  
+Change the alert behavior to be shown when the companion appears or disappears compared to the moment when command was called.  
 Check if any companion is assigned to the character before calling TOGGLE_PET_ACTIVITY.
