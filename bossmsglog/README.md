@@ -2,3 +2,6 @@
 
 Screenshot:  
 ![BossNotice](https://raw.githubusercontent.com/librarianrabbit/tos-misc/master/images/BossNotice.png)
+
+Planned changes:  
+Add option to track lesser field bosses too.
