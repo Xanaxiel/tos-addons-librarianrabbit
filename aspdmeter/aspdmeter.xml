@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uiframe name="aspdmeter" x="0" y="0" width="500" height="90">
+    <frame title="aspdmeter" snapclient="true" snapframe="true" layout_gravity="left top" margin="0 0 0 0"/>
+	<option visible="true" closebutton="false" useimageitem="false" piptype="left" autoopen="true" hideable="false"/>
+    <input hittestframe="false"/>
+    <draw blend="100" drawtitlebar="false" drawframe="false"/>
+    <controls>
+		<richtext name="aspd_meter" rect="0 0 500 90" margin="0 0 0 0" layout_gravity="left top" hittest="false" caption=""/>
+	</controls>
+</uiframe>
