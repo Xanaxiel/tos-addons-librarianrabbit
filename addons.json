@@ -52,5 +52,19 @@
             "mount",
             "companion"
         ]
+    },
+    {
+        "name" : "Guild no-crash!",
+        "file" : "guildnocrash",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "guildnocrash",
+        "unicode" : "☕",
+        "description" : "Fix the guild infinite loop/crashing issue when logging on characters on some guilds.",
+        "tags" : [
+            "guild",
+            "crash",
+            "fix"
+        ]
     }
 ]
