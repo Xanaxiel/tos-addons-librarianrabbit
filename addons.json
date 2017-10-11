@@ -57,10 +57,10 @@
         "name" : "Guild no-crash!",
         "file" : "guildnocrash",
         "extension" : "ipf",
-        "fileVersion" : "v1.0.0",
+        "fileVersion" : "v1.0.1",
         "releaseTag" : "guildnocrash",
         "unicode" : "☕",
-        "description" : "Fix the guild infinite loop/crashing issue when logging on characters on some guilds.",
+        "description" : "IMC issued a hotfix to prevent guild members from crashing. This addon is no longer needed, please uninstall.",
         "tags" : [
             "guild",
             "crash",
