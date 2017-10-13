@@ -211,7 +211,7 @@ function BARRACKITEMLIST_SHOW_LIST(cid)
 		for i,value in ipairs(nodeList) do
 			local nodeItemList = list[value[1]]
 			if nodeItemList and not g.setting.hideNode[i] then
-				if value[1] == "Unused" then
+				if value[1] == "Silver" then
 					tree:Add(_LR_TRANSLATE("シルバー") .. " : " .. acutil.addThousandsSeparator(nodeItemList[1][2]));
 				else
 					tree:Add(value[g._nodeListLang]);
