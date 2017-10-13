@@ -31,7 +31,7 @@ function _LR_TRANSLATE(txt)
 end
 
 function _LR_LOAD_WAREHOUSE()
-	g.warehouseList = acutil.loadJSON(g.settingPath..'warehouse.json',nil);
+	g.warehouseList = acutil.loadJSON(g.settingPath..'warehouse.json',nil) or {};
 end
 -- }
 
