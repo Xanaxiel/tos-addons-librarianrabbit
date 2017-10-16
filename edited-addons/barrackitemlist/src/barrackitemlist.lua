@@ -36,7 +36,7 @@ end
 -- }
 
 g.nodeList = {
-		{"Silver" , "シルバー"}
+		{"Unused" , "シルバー"}
 		,{"Weapon" , "武器"}
 		,{"SubWeapon" , "サブ武器"}
 		,{"Armor" , "アーマー"}
@@ -209,9 +209,14 @@ function BARRACKITEMLIST_SHOW_LIST(cid)
 		local slot,slotset,icon
 		local nodeList = g.nodeList
 		for i,value in ipairs(nodeList) do
+-- LR edit {
+			if value[1] == "Silver" then
+				value[1] = "Unused"
+			end
+-- }
 			local nodeItemList = list[value[1]]
 			if nodeItemList and not g.setting.hideNode[i] then
-				if value[1] == "Silver" then
+				if value[1] == "Unused" then
 					tree:Add(_LR_TRANSLATE("シルバー") .. " : " .. acutil.addThousandsSeparator(nodeItemList[1][2]));
 				else
 					tree:Add(value[g._nodeListLang]);
@@ -294,7 +299,7 @@ function BARRACKITEMLIST_SEARCH_ITEMS(itemlist,itemName,iswarehouse)
 			for group,list in pairs(ilist) do
 				if group ~= 'warehouse' or iswarehouse then
 					for i ,v in ipairs(list) do
-						if string.find(v[1],itemName) then
+						if string.find(string.lower(v[1]),string.lower(itemName)) then
 							items[cid] = items[cid] or {}
 							table.insert(items[cid],v)
 						end
@@ -329,7 +334,7 @@ function _BARRACKITEMLIST_SHOW_SEARCH_ITEMS(frame, obj, argStr, argNum)
 	local frame = ui.GetFrame('barrackitemlist')
 	local searchGbox = frame:GetChild('searchGbox')
 	local editbox = tolua.cast(searchGbox:GetChild('searchEdit'), "ui::CEditControl");
-	local tree = searchGbox:CreateOrGetControl('tree','saerchTree',25,50,545,0)
+	local tree = searchGbox:CreateOrGetControl('tree','searchTree',25,50,545,0)
 	tolua.cast(tree,'ui::CTreeControl')
 	tree:ResizeByResolutionRecursively(1)
 	tree:Clear()
