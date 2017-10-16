@@ -38,18 +38,6 @@ function string.starts(String,Start)
     return string.sub(String,1,string.len(Start))==Start
 end
 
-function directory_exists(path)
-    local ok, err, code = os.rename(path, path)
-
-    if not ok then
-        if code == 13 then
-            return true;
-        end
-    end
-
-    return false;
-end
-
 g.TR_lang = g.setting.lang;
 
 g.TR_strings = {};
@@ -329,10 +317,6 @@ function BARRACKITEMLIST_TAB_CHANGE(frame, obj, argStr, argNum)
     end
 
     BARRACKITEMLIST_TRANSLATE_UI();
-
-    if not directory_exists(g.settingPath) then
-        CHAT_SYSTEM("[BarrackItemList] " .. g.settingPath .. " not found. Inventory data won't be saved.");
-    end
 end
 
 function BARRACKITEMLIST_COMMAND(command)
