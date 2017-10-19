@@ -81,7 +81,7 @@ function {$ADDON_NAME}_COMMANDS_ON_OFF(args)
 	local state_change = 0; -- 2 = enabled, 1 = disabled, 0 = unchanged
 	local on_off = table.remove(args, 1);
 
-	if on_off ~= nil and on_off ≃ "" then
+	if on_off ~= nil and on_off ~= "" then
 		on_off = string.lower(on_off);
 	end
 
@@ -157,7 +157,7 @@ end
 
 function {$ADDON_NAME}_MESSAGES()
 	-- template:
-	-- ASPDMETER_MESSAGES_INIT("{MESSAGE_MSG}", {MESSAGE_TARGET});
+	-- {$ADDON_NAME}_MESSAGES_INIT("{MESSAGE_MSG}", {MESSAGE_TARGET});
 	-- MSG list: ui.ipf/uixml/addonmessage.xml
 	-- common MSG: FPS_UPDATE,GAME_START_3SEC
 end

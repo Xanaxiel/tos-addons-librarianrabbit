@@ -76,9 +76,7 @@
         "unicode" : "🐇",
         "description" : "Change inventory store format for faster loading.",
         "tags" : [
-            "guild",
-            "crash",
-            "fix"
+            "barrackitemlist"
         ]
     }
 ]
