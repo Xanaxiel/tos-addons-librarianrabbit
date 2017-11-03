@@ -68,6 +68,8 @@ function {$ADDON_NAME}_COMMANDS_OP(args)
 		if op == "on" or op == "off" then
 			{$ADDON_NAME}_COMMANDS_ON_OFF(args);
 		end
+
+		return;
 	end
 
 	-- default action:
