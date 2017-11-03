@@ -78,5 +78,18 @@
         "tags" : [
             "barrackitemlist"
         ]
+    },
+    {
+        "name" : "Zoomy Plus (TBL fix)",
+        "file" : "zoomyplus-tbl",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "zoomyplus-tbl",
+        "unicode" : "🐇",
+        "description" : "Edits FiftyCaliber's zoomyplus to disable features during TBL matches.",
+        "tags" : [
+            "zoomyplus",
+            "tbl"
+        ]
     }
 ]
