@@ -12,7 +12,7 @@ _G["ADDONS"] = _G["ADDONS"] or {};
 _G["ADDONS"][addon_dev] = _G["ADDONS"][addon_dev] or {};
 _G["ADDONS"][addon_dev][addon_name] = _G["ADDONS"][addon_dev][addon_name] or {};
 
-local g = _G["ADDONS"][addon_dev][addon_name];
+local g = _G["ADDONS"]["{$ADDON_DEV}"]["{$ADDON_NAME}"];
 
 -- globals: hooks
 g["HOOKS"] = g["HOOKS"] or {};
@@ -62,14 +62,16 @@ end
 function {$ADDON_NAME}_COMMANDS_OP(args)
 	local op = "";
 
-	if #args > 0 then
-		op = string.lower(table.remove(args, 1));
+	if args ~= nil then
+		if #args > 0 then
+			op = string.lower(table.remove(args, 1));
 
-		if op == "on" or op == "off" then
-			{$ADDON_NAME}_COMMANDS_ON_OFF(args);
+			if op == "on" or op == "off" then
+				{$ADDON_NAME}_COMMANDS_ON_OFF({op});
+			end
+
+			return;
 		end
-
-		return;
 	end
 
 	-- default action:
@@ -81,30 +83,34 @@ function {$ADDON_NAME}_COMMANDS_ON_OFF(args)
 	-- 1) 'on' or 'off' or nil
 
 	local state_change = 0; -- 2 = enabled, 1 = disabled, 0 = unchanged
-	local on_off = table.remove(args, 1);
+	local on_off = nil;
+
+	if args ~= nil then
+		on_off = table.remove(args, 1);
+	end
 
 	if on_off ~= nil and on_off ~= "" then
 		on_off = string.lower(on_off);
 	end
 
 	if on_off == "on" then
-		if g.enabled == false then
+		if g.settings.enabled == false then
 			state_change = 2;
 		end
 
-		g.enabled = true;
+		g.settings.enabled = true;
 	elseif on_off == "off" then
-		if g.enabled == false then
+		if g.settings.enabled == false then
 			state_change = 1;
 		end
 
-		g.enabled = false;
+		g.settings.enabled = false;
 	else
-		if g.enabled == true then
-			g.enabled = false;
+		if g.settings.enabled == true then
+			g.settings.enabled = false;
 			state_change = 1;
 		else
-			g.enabled = true;
+			g.settings.enabled = true;
 			state_change = 2;
 		end
 	end

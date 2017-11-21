@@ -91,5 +91,21 @@
             "zoomyplus",
             "tbl"
         ]
+    },
+    {
+        "name" : "Comfy Summon Riding",
+        "file" : "comfysummonriding",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "comfysummonriding",
+        "unicode" : "🐇",
+        "description" : "Allows casting sorcerer's summoned boss skills without holding L1 on controllers. (Experimental/Beta).\n Use /csr to toggle between enabled or disabled.\n Use /csr unride for emergency unride (in case of bugs, experimental).",
+        "tags" : [
+            "controller",
+            "joystick",
+            "summon",
+            "summoning",
+            "sorcerer"
+        ]
     }
 ]
