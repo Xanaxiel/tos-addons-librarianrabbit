@@ -107,5 +107,19 @@
             "summoning",
             "sorcerer"
         ]
+    },
+    {
+        "name" : "PokeLua",
+        "file" : "pokelua",
+        "extension" : "ipf",
+        "fileVersion" : "v1.0.0",
+        "releaseTag" : "pokelua",
+        "unicode" : "🐇",
+        "description" : "Prevents pokemon event shop window from closing automatically.",
+        "tags" : [
+            "pokemon",
+            "event",
+            "shop"
+        ]
     }
 ]
