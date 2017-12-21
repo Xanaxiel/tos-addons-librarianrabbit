@@ -71,7 +71,7 @@
         "name" : "BarrackItemList Edited",
         "file" : "barrackitemlist-edited",
         "extension" : "ipf",
-        "fileVersion" : "v1.0.0",
+        "fileVersion" : "v1.0.1",
         "releaseTag" : "barrackitemlist-edited",
         "unicode" : "🐇",
         "description" : "Change inventory store format for faster loading.\n Use /il lang en for english translation.",

@@ -333,6 +333,8 @@ function BARRACKITEMLIST_COMMAND(command)
 
     BARRACKITEMLIST_CREATE_SETTINGMENU()
     ui.ToggleFrame('barrackitemlist')
+
+    BARRACKITEMLIST_TRANSLATE_UI();
 end
 
 function BARRACKITEMLIST_SAVE_LIST()
@@ -363,7 +365,7 @@ function BARRACKITEMLIST_SHOW_LIST(cid)
     local droplist = GET_CHILD(frame,'droplist', "ui::CDropList")
     if not cid then cid= droplist:GetSelItemKey() end
     for k,v in pairs(g.userlist[sid]) do
-        local child = gbox:GetChild("tree"..k) 
+        local child = gbox:GetChild("tree"..k)
         if child then
             child:ShowWindow(0)
         end
@@ -389,12 +391,12 @@ function BARRACKITEMLIST_SHOW_LIST(cid)
 
     local tree = gbox:CreateOrGetControl('tree','tree'..cid,25,50,545,0)
     -- if tree:GetUserValue('exist_data') ~= '1' then
-        -- tree:SetUserValue('exist_data',1) 
+        -- tree:SetUserValue('exist_data',1)
         tolua.cast(tree,'ui::CTreeControl')
         tree:ResizeByResolutionRecursively(1)
         tree:Clear()
         tree:EnableDrawFrame(true);
-        tree:SetFitToChild(true,60); 
+        tree:SetFitToChild(true,60);
         tree:SetFontName("white_20_ol");
         local nodeName,parentCategory
         local slot,slotset,icon
@@ -434,7 +436,7 @@ function BARRACKITEMLIST_MAKE_SLOTSET(tree, name)
     local col = g.setting.col
     local slotsize = math.floor(tree:GetWidth() / (col + 1))
     local slotsetTitle = 'slotset_titile_'..name
-    local newslotset = tree:CreateOrGetControl('slotset','slotset_'..name,0,0,0,0) 
+    local newslotset = tree:CreateOrGetControl('slotset','slotset_'..name,0,0,0,0)
     tolua.cast(newslotset, "ui::CSlotSet");
 
     newslotset:EnablePop(0)
@@ -486,7 +488,7 @@ function BARRACKITEMLIST_SHOW_SEARCH_ITEMS(frame, obj, argStr, argNum)
     tree:ResizeByResolutionRecursively(1)
     tree:Clear()
     tree:EnableDrawFrame(true);
-    tree:SetFitToChild(true,60); 
+    tree:SetFitToChild(true,60);
     tree:SetFontName("white_20_ol");
     if editbox:GetText() == '' or not editbox:GetText() then return end
     local sid = BARRACKITEMLIST_GET_SERVER_ID();
@@ -602,7 +604,7 @@ function BARRACKITEMLIST_CREATE_SETTINGMENU()
         checkbox = hideNodeGbox:CreateOrGetControl('checkbox','checkbox'..i,30,i*30,200,30)
         tolua.cast(checkbox,'ui::CCheckBox')
         checkbox:SetText('{s30}{#000000}'..BARRACKITEMLIST_TR(g.nodeList[i][2]))
-        if not g.setting.hideNode[i] then 
+        if not g.setting.hideNode[i] then
             checkbox:SetCheck(1)
         end
     end
@@ -612,7 +614,7 @@ function BARRACKITEMLIST_CREATE_SETTINGMENU()
     end
 end
 
-function BARRACKITEMLIST_SAVE_SETTINGMENU() 
+function BARRACKITEMLIST_SAVE_SETTINGMENU()
     local frame = ui.GetFrame('barrackitemlist')
     local settingGbox = frame:GetChild('settingGbox')
     local hideNodeGbox = settingGbox:GetChild('hideNodeGbox')
@@ -623,7 +625,7 @@ function BARRACKITEMLIST_SAVE_SETTINGMENU()
     local checkbox
     for i = 1 ,#g.nodeList do
         checkbox = tolua.cast(hideNodeGbox:GetChild('checkbox'..i),'ui::CCheckBox')
-        if checkbox:IsChecked() ~= 1 then 
+        if checkbox:IsChecked() ~= 1 then
             g.setting.hideNode[i] = true
         else
             g.setting.hideNode[i] = false
@@ -631,7 +633,7 @@ function BARRACKITEMLIST_SAVE_SETTINGMENU()
     end
 
     checkbox = tolua.cast(settingGbox:GetChild('openNodeChbox'),'ui::CCheckBox')
-    if checkbox:IsChecked() == 1 then 
+    if checkbox:IsChecked() == 1 then
         g.setting.OpenNodeAll = true
     else
         g.setting.OpenNodeAll = false
@@ -639,41 +641,12 @@ function BARRACKITEMLIST_SAVE_SETTINGMENU()
     acutil.saveJSON(g.settingPath..'setting.json',g.setting)
 end
 
-function BARRACKITEMLIST_CREATE_VAR_ICONS()
-    local frame = ui.GetFrame("sysmenu");
-    if false == VARICON_VISIBLE_STATE_CHANTED(frame, "necronomicon", "necronomicon")
-    and false == VARICON_VISIBLE_STATE_CHANTED(frame, "grimoire", "grimoire")
-    and false == VARICON_VISIBLE_STATE_CHANTED(frame, "guild", "guild")
-    and false == VARICON_VISIBLE_STATE_CHANTED(frame, "poisonpot", "poisonpot")
-    then
-        return;
-    end
-
-    DESTROY_CHILD_BY_USERVALUE(frame, "IS_VAR_ICON", "YES");
-
-    local extraBag = frame:GetChild('extraBag');
-    local status = frame:GetChild("status");
-    local offsetX = status:GetX() - extraBag:GetX();
-    local rightMargin = extraBag:GetMargin().right + offsetX;
-
-    rightMargin = SYSMENU_CREATE_VARICON(frame, extraBag, "guild", "guild", "sysmenu_guild", rightMargin, offsetX, "Guild");
-    rightMargin = SYSMENU_CREATE_VARICON(frame, extraBag, "necronomicon", "necronomicon", "sysmenu_card", rightMargin, offsetX);
-    rightMargin = SYSMENU_CREATE_VARICON(frame, extraBag, "grimoire", "grimoire", "sysmenu_neacro", rightMargin, offsetX);
-    rightMargin = SYSMENU_CREATE_VARICON(frame, extraBag, "poisonpot", "poisonpot", "sysmenu_wugushi", rightMargin, offsetX);	
-    if _G["EXPCARDCALCULATOR"] then
-        rightMargin = SYSMENU_CREATE_VARICON(frame, status, "expcardcalculator", "expcardcalculator", "addonmenu_expcard", rightMargin, offsetX, "Experience Card Calculator") or rightMargin
-    end
-    rightMargin = SYSMENU_CREATE_VARICON(frame, status, "barrackitemlist", "barrackitemlist", "sysmenu_inv", rightMargin, offsetX, "barrack item list");
-
-    local expcardcalculatorButton = GET_CHILD(frame, "expcardcalculator", "ui::CButton");
-    if expcardcalculatorButton ~= nil then
-        expcardcalculatorButton:SetTextTooltip("{@st59}expcardcalculator");
-    end
-
-    local barrackitemlistButton = GET_CHILD(frame, "barrackitemlist", "ui::CButton");
-    if barrackitemlistButton ~= nil then
-        barrackitemlistButton:SetTextTooltip("{@st59}barrackitemlist");
-    end
+function BARRACKITEMLIST_OPEN_UI()
+    ui.GetFrame('barrackitemlist'):ShowWindow(1);
 
     BARRACKITEMLIST_TRANSLATE_UI();
+end
+
+function BARRACKITEMLIST_CREATE_VAR_ICONS()
+	acutil.addSysIcon("barrackitemlist", "sysmenu_inv", "barrackitemlist", "BARRACKITEMLIST_OPEN_UI");
 end
